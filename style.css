@@ -1,0 +1,154 @@
+body{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+}
+
+/* Navigation Bar */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #007bff; /* Primary color highlight */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+
+/*Hero Section*/
+#hero{
+    min-height: 85vh;
+}
+/*about*/
+.card{
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover{
+     transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Skills Section */
+.col-lg-6{
+    padding: 0;
+}
+.skill-badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+.skill-badge:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+}
+.progress{
+    transition: transform 0.3s ease;
+}
+.progress:hover{
+     transform: translateY(-3px); 
+}
+
+/* Projects Section */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.project-card img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.tech-used .badge {
+    background-color: #17a2b8 !important; 
+}
+
+.contact .card{
+    border: none;
+    border-radius: 1rem;
+}
+
+.form-control{
+    border-radius: 0.5rem;
+}
+
+/* Footer */
+.social-icons a {
+    padding: 3px 5px;
+    border-radius: 10px;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    border-radius: 10%;
+    background-color: #007bff !important;
+}
+
+/* --- Animation Definitions (Subtle Motion Effects) --- */
+
+/* Base class for elements that will be animated */
+
+.animate-on-scroll{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform,;
+}
+
+.animate-on-scroll.animated{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific Animation Styles */
+
+
+.slide-up{
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45,0.94);
+}
+
+/* Animation Delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+
+@media(max-width: 992px){
+    #hero{
+        min-height: 50vh;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    #badge{
+        padding-top: 4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
