@@ -138,9 +138,23 @@ h1, h2, h3, h4, h5, h6{
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
+    #about .col-md-4{
+        padding: 10%;
+    }
     #badge{
         padding-top: 4rem;
     }
+    #work .col-md-3{
+        justify-items: center;
+        
+    }
+    #skills .row{
+        padding-left: 10%;
+    }
+    #projects .col{
+        padding: 8%;
+    }
+    
 }
 
 
