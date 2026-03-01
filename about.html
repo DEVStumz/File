@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="path/to/bootstrap-iconc.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Nav */
+        #navbar{
+            height: 15vh;
+        }
+        nav{
+            margin-top: -3%;
+        }
+        .logo img{
+            width: 25%;
+            margin-top: -7%;
+        }
+
+    /* Style the List */
+
+        .bg-grey ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            transition: transform 0.2s ease;
+        }
+
+    /* Create a custom blue bullet point */
+        .bg-grey ul li::before {
+            content: "•";
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.5em;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+    /* Subtle hover effect for interactivity */
+        .bg-grey ul li:hover {
+            transform: translateX(5px);
+            color: #007bff;
+        }
+   
+        @media(max-width: 720px){
+            .logo img{
+            margin-top: .4%;
+            }
+        }
+</style>
+<body>    
+    <header id="navbar" class="w-full z-[60] sticky-top shadow-sm text-white bg-black backdrop-blur-md border-b border-white/10">
+        <div class="flex justify-between items-center px-6 py-6 md:px-16">
+            <div class="logo">
+                <img src="images/IMG_20260225_223535_2-removebg-preview.png" alt="logo-img">
+            </div>
+            
+            <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-blue-500 transition">Home</a>
+                <a href="about.html" class="text-blue-500">About</a>
+                <a href="project.html" class="hover:text-blue-500 transition">Projects</a>
+                <a href="contact.html" class="hover:text-blue-500 transition">Contact</a>
+            </nav>
+
+            <button onclick="toggleDropdown()" class="lg:hidden text-white focus:outline-none">
+                <svg id="menuIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden bg-black/90 border-t border-white/10 overflow-hidden transition-all duration-300 ease-in-out">
+            <nav class="flex flex-col px-6 py-8 space-y-6 text-xs font-bold uppercase tracking-[0.3em]">
+                <a href="index.html" class="hover:text-blue-500 transition">Home</a>
+                <a href="about.html" class="text-blue-500 border-l-2 border-blue pl-4">About</a>
+                <a href="project.html" class="hover:text-blue-500 transition pl-4">Projects</a>
+                <a href="contact.html" class="hover:text-blue-500 transition pl-4">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <br><br><br>
+    <section class="py-5 bg-white" id="about">
+        <div class="container">
+
+            <h2 class="display-5 mb-4 text-dark text-center animate-on-scroll fade-in-up">About Me</h2>
+            <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll delay-4">
+
+            <div class="row">
+                <div class="col-md-4 text-center animate-on-scroll fade-in-up delay-2">
+                    <img src="images/myself-removebg-preview222.png" class="rounded-circle" style="background: #c9d6ff; border-radius: 50%; width: 90%; height: 90%;  " alt="about-img">
+                </div>
+
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead text-muted mb-4 animate-on-scroll fade-in-up delay-2">
+                        I am a dedicated Frontend Developer with a laser focus on the core technologies of the web. My passion lies in transforming design mockups into pixel-perfect, highly responsive, and accessible user interfaces.
+                    </p>
+                    <p class="text-muted animate-on-scroll fade-in-up delay-3">
+                        My expertise is rooted in **HTML5** for semantic structure, **CSS3** for elegant and efficient styling, **Bootstrap 5** for rapid, mobile-first layouts, and **vanilla JavaScript (ES6+)** for building dynamic interactions and ensuring a smooth user experience. I believe in writing clean, well-commented code that is easy to maintain and scale.
+                    </p>
+                </div>            
+            </div>
+
+            
+
+            <div class="container" style="margin-top: 7%; margin-bottom: 5%;">
+                <h2 class="display-5 mb-4 text-dark text-center animate-on-scroll fade-in-up">Education</h2>
+                <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll delay-4">
+
+                <div class="row">
+                    <div class="col-md-6 animate-on-scroll slide-up delay-2 p-4">
+                        <div class="card  p-5">
+                            <p>2020-2022</p>
+                            <h5 class="mb-2" style="font-weight: 500;">Office Technology and Management</h5>
+                            <h5 style="font-weight: 500;">OND (Ordinary National Diploma)</h5>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 animate-on-scroll slide-up delay-2 p-4">
+                        <div class="card p-5">
+                            <p>2022-2025</p>
+                            <h5 class="mb-2" style="font-weight: 500;">Management and Social Science</h5>
+                            <h5 style="font-weight: 500;">(BS.c) Bachelor's of Social Science</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-6 bg-grey p-4">
+                    <h3 class="display-10 mb-4 animate-on-scroll fade-in-up" style="color: #007bff; font-weight: bold; font-size: 1.5rem;">
+                        Professional Philosophy
+                    </h3>
+                    <p class="animate-on-scroll fade-in-up delay-4">
+                        I believe in creating web experiences <br> that are not just visually appealing <br>but also functionally robust and accessible <br> to everyone.
+                    </p>
+                </div>
+
+                <div class="col-md-6 bg-grey p-4">
+                    <h3 class="display-10 mb-4 animate-on-scroll fade-in-up" style="color: #007bff; font-weight: bold; font-size: 1.5rem;">
+                        Development Approach
+                    </h3>
+                    <ul class="animate-on-scroll fade-in-up" style=" padding-left: 0;">
+                        <li class="animate-on-scroll fade-in-up delay-1" style="margin-bottom: 10px; display: flex; align-items: center; list-style: none;">
+                                Mobile-First Responsive Design
+                        </li>
+                        <li class="animate-on-scroll fade-in-up delay-2" style="margin-bottom: 10px; display: flex; align-items: center;">
+                                Progressive Enhancement
+                        </li>
+                        <li class="animate-on-scroll fade-in-up delay-3" style="margin-bottom: 10px; display: flex; align-items: center;">
+                                Performance Optimization
+                        </li>
+                        <li class="animate-on-scroll fade-in-up delay-4" style="margin-bottom: 10px; display: flex; align-items: center;">
+                                Accessibility Compliance
+                        </li>
+                        <li class="animate-on-scroll delay-5" style="margin-bottom: 10px; display: flex; align-items: center;">
+                                Cross-Browser Compatibility
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container">
+            <h2 class="display-6 mb-4 text-dark text-center animate-on-scroll fade-in-up">My Work Process</h2>
+                        <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll delay-4">
+            <div class="row">
+                <div class="col-sm-3 p-4">
+                    <h1 class="text-center mb-3 animate-on-scroll fade-in-up" style="color: #007bff; font-weight: bold; font-size: 2rem;">01</h1>
+                    <h5 class=" text-center animate-on-scroll delay-2" style="font-weight: 700; font-size: 1.1rem;">
+                        Discovery & Planning
+                    </h5>
+                    <p class="text-center animate-on-scroll delay-4">
+                        Undestanding project requirments, goals, and target audience to create a strategic plan.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 p-4">
+                    <h1 class="text-center mb-3 animate-on-scroll fade-in-up" style="color: #007bff; font-weight: bold; font-size: 2rem;">02</h1>
+                    <h5 class=" text-center animate-on-scroll delay-2" style="font-weight: 700; font-size: 1.1rem;">
+                        Design & Prototyping
+                    </h5>
+                    <p class="text-center animate-on-scroll delay-4">
+                        Creating wireframes and interactive prototype to visualize the user experience.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 p-4">
+                    <h1 class="text-center mb-3 animate-on-scroll fade-in-up" style="color: #007bff; font-weight: bold; font-size: 2rem;">03</h1>
+                    <h5 class=" text-center animate-on-scroll delay-2 " style="font-weight: 700; font-size: 1.1rem;">
+                        Development
+                    </h5>
+                    <p class="text-center animate-on-scroll delay-4">
+                        Building the solution with clean, efficient code following best practices and standards.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 p-4">
+                    <h1 class="text-center mb-3 animate-on-scroll fade-in-up" style="color: #007bff; font-weight: bold; font-size: 2rem;">04</h1>
+                    <h5 class=" text-center animate-on-scroll delay-2" style="font-weight: 700; font-size: 1.1rem;">
+                        Testing & Launch
+                    </h5>
+                    <p class="text-center animate-on-scroll delay-4">
+                        Rigorous testing across devices and browsers followed by deployment and optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark text-white mb-5" style="background: linear-gradient(60deg, #171717, #d4d3d1);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mt-5 p-2">
+                    <h2 class="text-center animate-on-scroll fade-in-up" style="font-weight: 700; font-size: 1.5em;">
+                        Ready to Build Something Amazing ? 
+                    </h2>
+                </div>
+                
+
+                <div class="col-md-6 mt-5 mb-3 p-2 text-center">
+                    <p class="text-center animate-on-scroll delay-5">
+                        Let's discuss how we can create exceptional <br> digital experiences for your users.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary btn-lg rounded-2 mt-3 px-4 animate-on-scroll fade-in-up delay-4" style="font-weight: 500;">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="social-icons mb-2">
+                <a class="text-white" href="https://github.com/DEVStumz"><i class="bi bi-github"></i></a> 
+                <a class="text-white" href="https://x.com/DavidStumz"><i class="bi bi-twitter-x"></i></a>
+                <a class="text-success" href="https://wa.me/qr/AGJSD4CI52YCL1 "><i class="bi bi-whatsapp fa-lg"></i></a>
+                <a class="text-danger" href="https://www.instagram.com/storm_zee01?igsh=MWRuOG05N2VocjdtNA=="><i class="bi bi-instagram"></i></a>
+                <a class="text-primary-subtle" href="https://www.linkedin.com/in/bilewumi-david-982738307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
+                <a class="text-white" href="https://www.tiktok.com/@davidf32h?_r=1&_t=ZS-91pg09ruazx"><i class="bi bi-tiktok"></i></a>
+                <a class="text-danger" href="mailto:davidbilewumi51@gmail.com"><i class="bi bi-envelope-at-fill"></i></a>
+            </div>
+            <hr>
+            <p class="mt-2">&copy; 2025 DEV_Stumz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleDropdown() {
+                const menu = document.getElementById('mobileMenu');
+                const icon = document.getElementById('menuIcon');
+
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    // Slight rotation effect for the icon
+                    icon.style.transform = 'rotate(90deg)';
+                } else {
+                    menu.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+    </script>
+    
+</body>
+</html>

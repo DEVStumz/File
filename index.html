@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Portfolio</title>
+    <title>DEV_Stumz Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8g2c+I9B9F6mD1/7oFkO6X6e/p1D0JzW0Z17/9W40D4T1t0t3Lq/3P/9P5W3W1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,30 +13,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="56">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#hero">DEV_Stumz</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+<style>
+    /* Nav*/
+    #navbar{
+        height: 15vh;
+    }
+    nav{
+        margin-top: -3%;
+    }
+    .logo img{
+        width: 25%;
+        margin-top: -7%;
+    }
+    @media(max-width: 720px){
+        .logo img{
+        margin-top: .4%;
+        }
+        #hero{
+            max-height: fit-content;
+        }
+    }
+
+
+        /* The background bar */
+    .progress-line {
+        height: 10px;
+        width: 100%;
+        background-color: #e9ecef; /* Light gray background */
+        border-radius: 10px;
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
+
+    /* The moving fill */
+    .progress-line span {
+        display: block;
+        height: 100%;
+        background-color: #0d6efd; /* Bootstrap Primary Blue - change if needed */
+        width: 0%; /* Start at zero */
+        transition: width 1.5s ease-in-out; /* The animation magic */
+        border-radius: 10px;
+    }
+</style>
+<body>
+
+    <header id="navbar" class="w-full z-[60] sticky-top shadow-sm text-white bg-black backdrop-blur-md border-b border-white/10">
+        <div class="flex justify-between items-center px-6 py-6 md:px-16">
+            <div class="logo">
+                <img src="images/IMG_20260225_223535_2-removebg-preview.png" alt="logo-img">
             </div>
+            
+            <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="text-blue-500">Home</a>
+                <a href="about.html" class="hover:text-blue-500 transition">About</a>
+                <a href="project.html" class="hover:text-blue-500 transition">Projects</a>
+                <a href="contact.html" class="hover:text-blue-500 transition">Contact</a>
+            </nav>
+
+            <button onclick="toggleDropdown()" class="lg:hidden text-white focus:outline-none">
+                <svg id="menuIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
         </div>
-    </nav>
 
-
+        <div id="mobileMenu" class="hidden lg:hidden bg-black/90 border-t border-white/10 overflow-hidden transition-all duration-300 ease-in-out">
+            <nav class="flex flex-col px-6 py-8 space-y-6 text-xs font-bold uppercase tracking-[0.3em]">
+                <a href="index.html" class="text-blue-500 border-l-2 border-blue pl-4">Home</a>
+                <a href="about.html" class="hover:text-blue-500 transition pl-4">About</a>
+                <a href="project.html" class="hover:text-blue-500 transition pl-4">Projects</a>
+                <a href="contact.html" class="hover:text-blue-500 transition pl-4">Contact</a>
+            </nav>
+        </div>
+    </header>
 
     <main>
-        <header class="py-5 text-center d-flex align-items-center bg-light" id="hero">
-            <div class="container my-5">
+        <section class="py-5 text-center d-flex align-items-center bg-light" id="hero" style="margin-top: -5%;">
+            <div class="container my-5 pt-5">
                 <div class="row align-items-center">
                     <div class="col-lg-10 mx-auto">
                         <h1 class="display-3 fw-bold text-dark mb-3 animate-on-scroll fade-in-up">
@@ -44,53 +98,45 @@
                         <p class="lead mb-4 text-muted animate-on-scroll fade-in-up delay-3">
                           I exclusively use **HTML, CSS, Bootstrap, and JavaScript** to build fast, user-friendly, and lightweight web experiences. 
                         </p>
-                        <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 animate-on-scroll fade-in-up delay-4">
+                        <a href="project.html" class="btn btn-primary btn-lg rounded-2 px-4 animate-on-scroll fade-in-up delay-4">
                             View My Projects <i class="fas fa-arrow-right ms-2"></i>
                         </a>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <section class="py-5 bg-white" id="about">
-            <div class="container">
+        <section>
+            <div class="container mt-3 mb-3">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="display-5 mb-4 text-dark animate-on-scroll fade-in-up">About Me</h2>
-                        <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll delay-2">
-                        <p class="lead text-muted mb-4 animate-on-scroll fade-in-up delay-2">
-                            I am a dedicated Frontend Developer with a laser focus on the core technologies of the web. My passion lies in transforming design mockups into pixel-perfect, highly responsive, and accessible user interfaces.
-                        </p>
-                        <p class="text-muted animate-on-scroll fade-in-up delay-3">
-                            My expertise is rooted in **HTML5** for semantic structure, **CSS3** for elegant and efficient styling, **Bootstrap 5** for rapid, mobile-first layouts, and **vanilla JavaScript (ES6+)** for building dynamic interactions and ensuring a smooth user experience. I believe in writing clean, well-commented code that is easy to maintain and scale.
+                    <div class="col-md-4 text-center p-4">
+                        <i class="bi bi-lightning-charge-fill" style="color: blue;font-size: 2em;"></i>
+                        <h3 class="mb-2 mt-4 animate-on-scroll fade-in-up" style="font-weight: 700; font-size: 1.2em;">
+                            Performance First
+                        </h3>
+                        <p class="animate-on-scroll fade-in-up delay-4">
+                            Website optimized for speed and Core Web vitals, ensuring superior user experience and SEO rankings.
                         </p>
                     </div>
-                    <div class="col-md-4 text-center animate-on-scroll fade-in-up delay-2"style="margin-top: 2%;">
-                        <img src="images/myself-removebg-preview222.png" style="background: #c9d6ff; border-radius: 50%; width: 90%; height: 90%; " alt="about-img">
+
+                    <div class="col-md-4 text-center p-4">
+                        <i class="bi bi-phone" style="color: blue;font-size: 2em; font-weight: 700;"></i>
+                        <h3 class="mb-2 mt-4 animate-on-scroll fade-in-up" style="font-weight: 700; font-size: 1.2em;">
+                            Mobile-First
+                        </h3>
+                        <p class="animate-on-scroll fade-in-up delay-4">
+                           Responsive designs that work flawlessly across all devices, from smartphones to desktops.  
+                        </p>
                     </div>
-                </div>
 
-                <div class="container" style="margin-top: 7%; margin-bottom: 5%;">
-                    <h2 class="display-5 mb-4 text-dark text-center animate-on-scroll fade-in-up">Education</h2>
-                    <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll delay-2">
-
-                    <div class="row">
-                        <div class="col-md-6 animate-on-scroll slide-up delay-2">
-                            <div class="card  p-5">
-                                <p>2020-2022</p>
-                                <h5>Office Technology and Management</h5>
-                                <h5>OND (Ordinary National Diploma)</h5>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6 animate-on-scroll slide-up delay-2">
-                            <div class="card p-5">
-                                <p>2022-2025</p>
-                                <h5>Management and Social Science</h5>
-                                <h5>(BS.c) Bachelor's of Social Science</h5>
-                            </div>
-                        </div>
+                    <div class="col-md-4 text-center p-4">
+                        <i class="bi bi-graph-up" style="color: blue;font-size: 2em; font-weight: 700;"></i>
+                        <h3 class="mb-2 mt-4 animate-on-scroll fade-in-up" style="font-weight: 700; font-size: 1.2em;">
+                            Results-Driven
+                        </h3>
+                        <p class="animate-on-scroll fade-in-up delay-4">
+                            Focus on conversion optimization and user engagement to achieve business objectives.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -100,93 +146,98 @@
             <div class="container">
                 <h2 class="display-5 text-center mb-4 text-dark animate-on-scroll fade-in-up">Skills & Tools</h2>
                 <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll fade-in-up delay-1">
-               <div class="row g-3">
-                    <h3 class="h4 mb-3 text-primary animate-on-scroll fade-in-up delay-2"><i class="fas fa-code me-2"></i>Core Technologies</h3>
-                    <div class="col-lg-6" style="margin-bottom: 5%;">
-                        <div>
-                            <span class="skill-badge badge bg-dark text-white me-2 mb-2 animate-on-scroll fade-in-up delay-3">HTML5</span>
-                            <div class="progress animate-on-scroll fade-in-up delay-3" style="width: 50%;">
-                            <div class="progress-bar" role="progressbar" style="width: 90%; background-color: red; color: white;" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">90%</div>
+                <div class="row align-items-start">
+                    <div class="col-md-8">
+                        <div class="skill-container">
+                            <div class="skill-info d-flex justify-content-between mb-2">
+                                <span class="fw-bold">HTML5 / CSS3</span>
+                                <span>98%</span>
                             </div>
-                        </div>
-                        <br>
-
-                        <div>
-                            <span class="skill-badge badge bg-dark text-white me-2 mb-2 animate-on-scroll fade-in-up delay-4">CSS3 </span>
-                            <div class="progress animate-on-scroll fade-in-up delay-3"  style="width: 50%;">
-                            <div class="progress-bar" role="progressbar" style="width: 78%; background-color: blue; color: white;" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">78%</div>
+                            <div class="progress-line" data-progress="98%">
+                                <span style="width: 0%;"></span>
                             </div>
-                        </div>
-                        <br>
 
-                        <div>
-                            <span class="skill-badge badge bg-dark text-white me-2 mb-2 animate-on-scroll fade-in-up delay-5">Bootstrap 5</span>
-                            <div class="progress animate-on-scroll fade-in-up delay-3" style="width: 50%;">
-                            <div class="progress-bar" role="progressbar" style="width: 80%; background-color: green; color: white;" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">80%</div>
+                            <div class="skill-info d-flex justify-content-between mb-2">
+                                <span class="fw-bold">JavaScript (ES6+)</span>
+                                <span>55%</span>
                             </div>
-                        </div>
-                        <br>
-
-                        <div>
-                            <span class="skill-badge badge bg-dark text-white me-2 mb-2 animate-on-scroll fade-in-up delay-6">JavaScript (ES6+)</span>
-                            <div class="progress animate-on-scroll fade-in-up delay-3" style="width: 50%;">
-                            <div class="progress-bar" role="progressbar" style="width: 40%; background-color: yellow; color: white;" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">40%</div>
+                            <div class="progress-line" data-progress="55%">
+                                <span style="width: 0%;"></span>
                             </div>
-                        </div>
-                    </div> 
 
-                    <div class="col-lg-6" style="margin-top: -5%;" id="badge">
-                        <h3 class="h4 mb-3 text-primary animate-on-scroll fade-in-up delay-2"><i class="fas fa-tools me-2"></i> Development Tools</h3>
-                        <div class="d-grid w-25">
-                            <span class="skill-badge badge bg-secondary me-2 mb-2 animate-on-scroll fade-in-up delay-3">Git</span>
-                            <span class="skill-badge badge bg-secondary me-2 mb-2 animate-on-scroll fade-in-up delay-4">GitHub</span>
-                            <span class="skill-badge badge bg-secondary me-2 mb-2 animate-on-scroll fade-in-up delay-5">VS Code</span>
-                            <span class="skill-badge badge bg-secondary me-2 mb-2 animate-on-scroll fade-in-up delay-6">Figma (Basic)</span>
-                            <span class="skill-badge badge bg-secondary me-2 mb-2 animate-on-scroll fade-in-up delay-7">Command Line</span>
+                            <div class="skill-info d-flex justify-content-between mb-2">
+                                <span class="fw-bold">BOOTSTRAP 5</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-line" data-progress="95%">
+                                <span style="width: 0%;"></span>
+                            </div>
                         </div>
                     </div>
-                </div>             
+
+                    <div class="col-md-4" id="badge">
+                        <h3 class="h4 mb-3 text-primary animate-on-scroll fade-in-up delay-2">
+                            <i class="fas fa-tools me-2"></i> Development Tools
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                            <span class="badge bg-secondary p-2 animate-on-scroll fade-in-up delay-3">Git</span>
+                            <span class="badge bg-secondary p-2 animate-on-scroll fade-in-up delay-4">GitHub</span>
+                            <span class="badge bg-secondary p-2 animate-on-scroll fade-in-up delay-5">VS Code</span>
+                            <span class="badge bg-secondary p-2 animate-on-scroll fade-in-up delay-6">Figma (Basic)</span>
+                            <span class="badge bg-secondary p-2 animate-on-scroll fade-in-up delay-7">Command Line</span>
+                        </div>
+                    </div>
+                </div>                 
             </div>
         </section>
 
         <section id="work">
             <div class="container">
                 <h2 class="display-5 text-center mb-4 text-dark animate-on-scroll fade-in-up" style="margin-top: 5%;">What i Do</h2>
-                <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll fade-in-up delay-3">
+                <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll fade-in-up delay-4">
 
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                    <div class="col-md-3 animate-on-scroll slide-up delay-2">
-                        <div class="card rounded-3" style="width: 280px; height: 40vh;">
-                            <div class="card-body text-dark">
-                                <img src="images/e commerce.png" class="img-fluid"  style="height: 30vh;" alt="card-img">
-                                <h5>E-Commerce Storefront</h5>                   
+                <div class="row">
+                    <div class="col-md-3 p-2 animate-on-scroll fade-in-up delay-2">
+                        <div class="card rounded-2">
+                            <img src="images/e commerce.png" class="rounded-2  img-fluid" style="height: 31vh;" alt="img">
+                            <div class="card-body">
+                                <h2 style="font-weight: 700;">
+                                    E-Commerce Storefront
+                                </h2>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3 animate-on-scroll slide-up delay-2">
-                        <div class="card rounded-3" style="width: 280px; height: 40vh;">
-                            <div class="card-body text-dark">
-                                <img src="images/porfolio.png" class="img-fluid"  style="height: 30vh;" alt="card-img">
-                                <h5>Portfolio Website</h5>  
+                    <div class="col-md-3 p-2 animate-on-scroll fade-in-up delay-4">
+                        <div class="card rounded-2">
+                            <img src="images/porfolio.png" class="rounded-2 img-fluid" style="height: 31vh;" alt="img">
+                            <div class="card-body">
+                                <h2 style="font-weight: 700;">
+                                    Portfolio
+                                </h2>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3 animate-on-scroll slide-up delay-2">
-                        <div class="card rounded-3" style="width: 280px; height: 40vh;">
-                            <div class="card-body text-dark">
-                                <img src="images/blog.jpg" class="img-fluid"  style="height: 30vh;" alt="card-img">
-                                <h5>Blogs</h5>    
+                    <div class="col-md-3 p-2 animate-on-scroll fade-in-up delay-6">
+                        <div class="card rounded-2">
+                            <img src="images/blog.jpg" class="rounded-2 img-fluid" style="height: 31vh;" alt="img">
+                            <div class="card-body">
+                                <h2 style="font-weight: 700;">
+                                    Blog
+                                </h2>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3 animate-on-scroll slide-up delay-2">
-                        <div class="card rounded-3" style="width: 280px; height: 40vh;">
-                            <div class="card-body text-dark">
-                                <img src="images/landing.jpg" class="img-fluid"  style="height: 30vh;" alt="card-img">
-                                <h5 style="font-size: 1.05rem;">Landing Page</h5>                    
+                    <div class="col-md-3 p-2 animate-on-scroll fade-in-up delay-8">
+                        <div class="card rounded-2">
+                            <img src="images/landing.jpg" class="rounded-2 img-fluid" style="height: 31vh;" alt="img">
+                            <div class="card-body">
+                                <h2 style="font-weight: 700;">
+                                    Landing Page
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -194,188 +245,30 @@
             </div>
         </section>
 
-        <section class="py-5 bg-white" id="projects" style="margin-top: 5%;">
+        <section class="bg-dark text-white mb-5 mt-5" style="background: linear-gradient(60deg, #010101, #b1adadf5, #010101);">
             <div class="container">
-                <h2 class="display-5 text-center mb-4 text-dark animate-on-scroll fade-in-up">Featured Projects</h2>
-                <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll fade-in-up delay-1">
-
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div class="col animate-on-scroll slide-up delay-2">
-                        <div class="card h-100 shadow-sm border-0 project-card">
-                            <img src="images/project 1.png" class="card-img-top" alt="project 1">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Headphone website</h5>
-                                <p class="card-text text-muted">A fully responsive, single-page website built entirely with Bootstrap 5 components and a touch of custom CSS.</p>
-                                <div class="mb-3 tech-used">
-                                    <span class="badge bg-primary me-1">HTML</span>
-                                    <span class="badge bg-primary me-1">CSS</span>
-                                    <span class="badge bg-primary me-1">Bootstrap 5</span>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-sm btn-outline-dark me-2">
-                                    <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                                </a>
-                                <a href="#" target="_blank" class="btn btn-sm btn-dark">
-                                    <i class="fas fa-code me-1"></i> Source Code
-                                </a>
-                            </div>
-
-                        </div>
-
+                <div class="row">
+                    <div class="col-md-6 mt-5 p-2">
+                        <h2 class="text-center animate-on-scroll fade-in-up" style="font-weight: 700; font-size: 1.5em;">
+                            Let's build a Professional Website for you! ? 
+                        </h2>
                     </div>
+                    
 
-                    <div class="col animate-on-scroll slide-up delay-3">
-                        <div class="card h-100 shadow-sm border-0 project-card">
-                            <img src="images/project 2.png" class="card-img-top" alt="project 2">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Coffee Landing Page</h5>
-                                <p class="card-text text-muted">A dynamic shopping landing page using purely HTML & CSS animations to make it user-friendly  .</p>
-                                <div class="mb-3 tech-used">
-                                    <span class="badge bg-primary me-1">HTML</span>
-                                    <span class="badge bg-primary me-1">CSS</span>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-sm btn-outline-dark me-2">
-                                    <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                                </a>
-                                <a href="#" target="_blank" class="btn btn-sm btn-dark">
-                                    <i class="fas fa-code me-1"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col animate-on-scroll slide-up delay-4">
-                        <div class="card h-100 shadow-sm border-0 project-card">
-                            <img src="images/project 3.png" class="card-img-top" alt="project 3">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Mortgage Landing Page</h5>
-                                <p class="card-text text-muted">A modern, clean landing page featuring subtle CSS animations and an elegant responsive layout.</p>
-                                <div class="mb-3 tech-used">
-                                    <span class="badge bg-primary me-1">HTML</span>
-                                    <span class="badge bg-primary me-1">CSS </span>
-                                    <span class="badge bg-primary me-1">Bootstrap 5</span>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-sm btn-outline-dark me-2">
-                                    <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                                </a>
-                                <a href="#" target="_blank" class="btn btn-sm btn-dark">
-                                    <i class="fas fa-code me-1"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" style="margin-top: 2%;">
-                    <div class="col animate-on-scroll slide-up delay-2">
-                        <div class="card h-100 shadow-sm border-0 project-card">
-                            <img src="images/project 4.png" class="card-img-top" alt="project 4">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Blog website</h5>
-                                <p class="card-text text-muted">A fully responsive, single-page website built entirely with Bootstrap 5 components and a touch of custom CSS.</p>
-                                <div class="mb-3 tech-used">
-                                    <span class="badge bg-primary me-1">HTML</span>
-                                    <span class="badge bg-primary me-1">CSS</span>
-                                    <span class="badge bg-primary me-1">Bootstrap 5</span>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-sm btn-outline-dark me-2">
-                                    <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                                </a>
-                                <a href="#" target="_blank" class="btn btn-sm btn-dark">
-                                    <i class="fas fa-code me-1"></i> Source Code
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col animate-on-scroll slide-up delay-3">
-                        <div class="card h-100 shadow-sm border-0 project-card">
-                            <img src="images/project 5.png" class="card-img-top" alt="project 5">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Military Helicopter Blog Page</h5>
-                                <p class="card-text text-muted">A dynamic Helicopter landing page using purely HTML, BOOTSTRAP & CSS animations to make it user-friendly  .</p>
-                                <div class="mb-3 tech-used">
-                                    <span class="badge bg-primary me-1">HTML</span>
-                                    <span class="badge bg-primary me-1">CSS</span>
-                                    <span class="badge bg-primary me-1">Bootstrap 5</span>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-sm btn-outline-dark me-2">
-                                    <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                                </a>
-                                <a href="#" target="_blank" class="btn btn-sm btn-dark">
-                                    <i class="fas fa-code me-1"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col animate-on-scroll slide-up delay-4">
-                        <div class="card h-100 shadow-sm border-0 project-card">
-                            <img src="images/project 6.png" class="card-img-top" alt="project 6">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Car Landing Page</h5>
-                                <p class="card-text text-muted">A modern, clean landing page featuring subtle CSS animations and an elegant responsive layout.</p>
-                                <div class="mb-3 tech-used">
-                                    <span class="badge bg-primary me-1">HTML</span>
-                                    <span class="badge bg-primary me-1">CSS </span>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-sm btn-outline-dark me-2">
-                                    <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                                </a>
-                                <a href="#" target="_blank" class="btn btn-sm btn-dark">
-                                    <i class="fas fa-code me-1"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-        </section>
-
-        <section class="py-5 bg-light" id="contact">
-            <div class="container">
-                <h2 class="display-5 text-center mb-4 text-dark animate-on-scroll fade-in-up">Get In Touch</h2>
-                <hr class="w-25 mx-auto text-primary mb-5 animate-on-scroll fade-in-up delay-1">
-                <p class="text-muted text-center animate-on-scroll fade-in-up delay-1">I would love to hear about your project and how i can help. <br> Please fill in
-                   the form, and i'll get back to you as soon as possible.</p>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card shadow-lg-8 p-4 animate-on-scroll fade-in-up delay-2">
-                            <div class="card-body">
-                                <form id="contactForm">
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" required placeholder="Your Name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email Address</label>
-                                        <input type="text" class="form-control" id="email" required placeholder="name@example.com">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="subject" class="form-label">Subject</label>
-                                        <input type="text" class="form-control" id="email" required placeholder="Project Inquiry, Hello, etc.">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="message" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message" rows="5" required placeholder="Tell me about your project or opportunity."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
-                                </form>
-                            </div>
-                        </div>
+                    <div class="col-md-6 mt-5 mb-3 p-2 text-center">
+                        <p class="text-center animate-on-scroll delay-5">
+                            Have a project in mind? i'd love to hear about it.
+                        </p>
+                        <a href="contact.html" class="btn bg-white border-primary hover:text-blue-500 btn-lg rounded-2 mt-3 px-4 animate-on-scroll fade-in-up delay-4" style="font-weight: 500;">Start conversation</a>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <p>&copy; 2025 DEV_Stumz. All rights reserved. | Built with HTML, CSS, Bootstrap, & JavaScript.</p>
-            <div class="social-icons">
+            <div class="social-icons mb-2">
                 <a class="text-white" href="https://github.com/DEVStumz"><i class="bi bi-github"></i></a> 
                 <a class="text-white" href="https://x.com/DavidStumz"><i class="bi bi-twitter-x"></i></a>
                 <a class="text-success" href="https://wa.me/qr/AGJSD4CI52YCL1 "><i class="bi bi-whatsapp fa-lg"></i></a>
@@ -384,9 +277,61 @@
                 <a class="text-white" href="https://www.tiktok.com/@davidf32h?_r=1&_t=ZS-91pg09ruazx"><i class="bi bi-tiktok"></i></a>
                 <a class="text-danger" href="mailto:davidbilewumi51@gmail.com"><i class="bi bi-envelope-at-fill"></i></a>
             </div>
+            <hr>
+            <p class="mt-2">&copy; 2025 DEV_Stumz. All rights reserved.</p>
         </div>
-
     </footer>
-    <script src="script.js"></script>
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/69355a1c6cc1a21980dfcd9d/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+            <!--End of Tawk.to Script-->
+        <script src="script.js"></script>
+    <script>
+        function toggleDropdown() {
+                const menu = document.getElementById('mobileMenu');
+                const icon = document.getElementById('menuIcon');
+
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    // Slight rotation effect for the icon
+                    icon.style.transform = 'rotate(90deg)';
+                } else {
+                    menu.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+
+        document.addEventListener("DOMContentLoaded", function() {
+                // This watches the screen to see when the bars appear
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 1. Find the inner <span>
+                        const bar = entry.target.querySelector('span');
+                        // 2. Get the number from data-progress (e.g. "98%")
+                        const percentage = entry.target.getAttribute('data-progress');
+                        // 3. Apply that number to the width to start the animation
+                        bar.style.width = percentage;
+                        // 4. Stop watching once it has animated
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% of the bar is visible on screen
+
+            // Tell the observer to watch every element with class "progress-line"
+            document.querySelectorAll('.progress-line').forEach(line => {
+                observer.observe(line);
+            });
+        });
+    </script>
 </body>
 </html>

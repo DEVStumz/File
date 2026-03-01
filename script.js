@@ -16,7 +16,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 // --- 2. Scroll-Based Animations (Intersection Observer) ---
 
 // Setup the observer
@@ -52,3 +51,47 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Reset the form after success simulation
     this.reset();
 });
+
+    const observerOptions = {
+  threshold: 0.5 // Trigger when 50% of the bar is visible
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progressBar = entry.target.querySelector('span');
+      const targetWidth = entry.target.getAttribute('data-progress');
+      
+      // Apply the width from data attribute
+      progressBar.style.width = targetWidth;
+      
+      // Stop observing once animated (optional)
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Select all progress lines and start observing
+document.querySelectorAll('.progress-line').forEach(line => {
+  observer.observe(line);
+});
+
+
+    /*FAQ*/
+        function toggleFAQ(id) {
+        const content = document.getElementById(`faq-${id}`);
+        const icon = document.getElementById(`icon-${id}`);
+        
+        // Close other open FAQs (Optional)
+        // document.querySelectorAll('[id^="faq-"]').forEach(el => {
+        //     if(el.id !== `faq-${id}`) el.classList.add('hidden');
+        // });
+
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.style.transform = 'rotate(45deg)';
+        } else {
+            content.classList.add('hidden');
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
